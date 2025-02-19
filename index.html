@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Capstone Title Generator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" id="Capstone">
+            <h3>Capstone Title/Proposal Generator</h3>
+            <h5>This help students generate creative and relevant capstone project titles quickly and easily. Just enter a few keywords and get the title ideas instantly!</h5>
+            <p>Enter your Topic below <i>Ex: Cybersecurity </i>.</p>
+            <input type="text" id="topic" class="text" placeholder="Enter your topic" required>
+            <div class="loader" id="loader" style="display: none;"></div>
+            <button type="submit" onclick="generateTitle()" name="submit">Generate</button>
+            <p class="title"><b>Your Capstone Title is: </b> <span id="title"></span></p>
+            <footer>
+                <p>&copy; 2021 Capstone Title Generator</p>
+                <p>Developed by: Carl Ortego</p>
+            </footer>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
