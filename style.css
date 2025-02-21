@@ -24,6 +24,7 @@ body {
     gap: 20px;
 }
 
+
 .form-box {
     width: 100%;
     max-width: 450px;
@@ -54,18 +55,6 @@ p {
     margin-bottom: 20px;
 }
 
-i {
-    font-size: 15px;
-    cursor: pointer;
-    color: #ff0000;
-    margin-bottom: 20px;
-}
-
-i:hover {
-    color: #000000;
-    text-decoration: underline;
-}
-
 h3 {
     font-size: 25px;
     color: #3529df;
@@ -86,7 +75,7 @@ h5 {
     text-shadow: 2px 2px 4px #000000;  
 }
 
-input {
+input, select {
     width: 100%;
     padding: 12px;
     background: #edcdcd;
@@ -112,23 +101,23 @@ button {
     margin-bottom: 20px;
 }
 
-#back {
+#delete {
     padding: 12px;
-    width: 45%;
+    width: 33%;
     border: none;
     border-radius: 10px;
     font: roboto;
     font-weight: bold ;
     font-size: 17px;
     cursor: pointer;
-    background: #ffffff;
+    background: #ec4051;
     color: #000000;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 
 #copy {
     padding: 12px;
-    width: 43%;
+    width: 32%;
     border: none;
     border-radius: 10px;
     font: roboto;
@@ -137,11 +126,25 @@ button {
     cursor: pointer;
     background: #7494ec;
     color: #ffffff;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
-#back:hover {
-    background: #000000;
+#download {
+    padding: 12px;
+    width: 30%;
+    border: none;
+    border-radius: 10px;
+    font: roboto;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    background: #28a745;
+    color: #ffffff;
+    margin-left: 5px;
+}
+
+#delete:hover {
+    background: #ff0019;
     color: #fff;
 }
 
@@ -151,7 +154,12 @@ button {
 }
 
 button:hover {
-    background: #1100ff;
+    background: #4800ff;
+}
+
+#download:hover {
+    background: #00ff37;
+    color: #ffffff;
 }
 
 footer p{
