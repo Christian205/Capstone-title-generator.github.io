@@ -4,6 +4,8 @@ async function generateTitle() {
 
     // Get user input
     const userTopic = document.getElementById("topic").value.trim();
+    const selectedGenerate = document.getElementById("generate").value;
+    const selectedField = document.getElementById("fields").value;
     const titleElement = document.getElementById("generated-titles");
 
     // Validate input
@@ -12,6 +14,24 @@ async function generateTitle() {
             title: "Error!",
             text: "Please enter your topic!!",
             icon: "error"
+        });
+        return;
+    }
+
+    if (selectedGenerate === "--Choose What to Generate--") {
+        Swal.fire({
+            title: "Selection Required!",
+            text: "Please select what you want to generate!",
+            icon: "warning"
+        });
+        return;
+    }
+
+    if (selectedField === "--Select a Field--") {
+        Swal.fire({
+            title: "Selection Required!",
+            text: "Please select a field!",
+            icon: "warning"
         });
         return;
     }
@@ -34,8 +54,12 @@ async function generateTitle() {
     titleElement.appendChild(loader); 
 
     // AI prompt
+    const promptText = selectedGenerate === "Generate Title" 
+    ? `Generate 5 unique capstone project titles related to: ${userTopic} in the field of ${selectedField}`
+    : `Generate a capstone project proposal related to: ${userTopic} in the field of ${selectedField}`;
+
     const prompt = {
-        contents: [{ role: "user", parts: [{ text: `Generate 5 unique capstone project titles related to: ${userTopic}` }] }]
+        contents: [{ role: "user", parts: [{ text: promptText }] }]
     };
 
     try {
@@ -103,4 +127,43 @@ function copyToClipboard() {
             icon: "error"
         });
     });
+}
+
+function deleteTitles() {
+        const titleElement = document.getElementById("generated-titles");
+        titleElement.innerHTML = ""; // Clear the generated titles
+        document.getElementById("topic").value = ""; // Clear the topic input
+        document.getElementById("generate").value = "--Choose What to Generate--"; // Reset the generate select
+        document.getElementById("fields").value = "--Select a Field--"; // Reset the fields select
+        Swal.fire({
+            title: "Deleted!",
+            text: "Generated titles have been deleted!",
+            icon: "success"
+        });
+}
+
+function downloadTitles() {
+    let titleList = document.querySelectorAll("#generated-titles li");
+    if (titleList.length === 0) {
+        Swal.fire({
+            title: "No titles to download!",
+            icon: "warning"
+        });
+        return;
+    }
+
+    let textToDownload = "";
+    titleList.forEach((item, index) => {
+        textToDownload += `${index + 1}. ${item.innerText}\n`; // Adds numbering to downloaded text
+    });
+
+    const blob = new Blob([textToDownload], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'generated_titles.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
 }
