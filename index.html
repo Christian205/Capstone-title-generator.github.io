@@ -12,15 +12,44 @@
         <div class="form-box" id="Capstone">
             <h3>Capstone Title/Proposal Generator</h3>
             <h5>This help students generate creative and relevant capstone project titles quickly and easily.Just enter a few keywords and get the title ideas instantly!</h5>
-            <p><b>Enter your Topic below </b><i>Ex: Cybersecurity </i></p>
-            <input type="text" id="topic" class="text" placeholder="Enter your topic" required>
-            <button type="submit" onclick="generateTitle()" name="submit">Generate</button>
-            <button id="back" onclick="showForm('Capstone');">Back</button>
-                <button id="copy" onclick="copyToClipboard();">Copy</button>
+            <input type="text" id="topic" class="text" placeholder="Input keywords or a full title" required>
+
+            <select id="generate" name="generate">
+            <option>--Choose What to Generate--</option>
+            <option value="Generate Title">Generate Title</option>
+            <option value="Generate Proposal">Generate Proposal</option>
+            </select>
+            
+            <select id="fields" name="fields">
+                <option>--Select a Field--</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
+                <option value="Data Science & Analytics">Data Science & Analytics</option>
+                <option value="Robotics & Automation">Robotics & Automation</option>
+                <option value="Renewable Energy & Sustainability">Renewable Energy & Sustainability</option>
+                <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Human-Computer Interaction">Human-Computer Interaction</option>
+                <option value="Game Development">Game Development</option>
+                <option value="Augmented & Virtual Reality">Augmented & Virtual Reality</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Civil & Structural Engineering">Civil & Structural Engineering</option>
+                <option value="Aerospace & Aviation">Aerospace & Aviation</option>
+                <option value="Biomedical Engineering">Biomedical Engineering</option>
+                <option value="Psychology & Behavioral Science">Psychology & Behavioral Science</option>
+                <option value="None">None</option>
+            </select>
+
+            <button type="submit" onclick="generateTitle(), showForm('title-box')" name="submit">Generate</button>
+            <button id="delete" onclick="deleteTitles();"> Delete</button>
+            <button id="copy" onclick="copyToClipboard();">Copy</button>
+            <button id="download" onclick="downloadTitles();">Download</button>
 
             <footer>
                 <p>&copy; 2025 Capstone Title Generator</p>
                 <p>Developed by: Carl Christian Ortego</p>
+                <p>Powered by: <a href="https://gemini.google.com/app">Gemini</a></p>
             </footer>
         </div>
 
@@ -33,10 +62,12 @@
             </div>
         </div>
     </div>
+    
+    </div>
     <script>
-  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+      </script>
+      <script defer src="/_vercel/speed-insights/script.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
