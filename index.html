@@ -5,21 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Capstone Title Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="container">
         <div class="form-box" id="Capstone">
             <h3>Capstone Title/Proposal Generator</h3>
-            <h5>This help students generate creative and relevant capstone project titles quickly and easily. Just enter a few keywords and get the title ideas instantly!</h5>
-            <p>Enter your Topic below <i>Ex: Cybersecurity </i>.</p>
+            <h5>This help students generate creative and relevant capstone project titles quickly and easily.Just enter a few keywords and get the title ideas instantly!</h5>
+            <p><b>Enter your Topic below </b><i>Ex: Cybersecurity </i></p>
             <input type="text" id="topic" class="text" placeholder="Enter your topic" required>
-            <div class="loader" id="loader" style="display: none;"></div>
             <button type="submit" onclick="generateTitle()" name="submit">Generate</button>
-            <p class="title"><b>Your Capstone Title is: </b> <span id="title"></span></p>
+            <button id="back" onclick="showForm('Capstone');">Back</button>
+                <button id="copy" onclick="copyToClipboard();">Copy</button>
+
             <footer>
                 <p>&copy; 2021 Capstone Title Generator</p>
-                <p>Developed by: Carl Ortego</p>
+                <p>Developed by: Carl</p>
             </footer>
+        </div>
+
+        <div class="form-box" id="title-box>
+            <div class="title-box">
+                <h3 class="left-align">Your capstone/proposal title are: </h3>
+                <div class="loader" id="loader" style="display: none;"></div>
+                <ol id="title-list"></ol>
+                <span id="generated-titles"></span>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
