@@ -57,7 +57,10 @@ p {
 
 h3 {
     font-size: 25px;
-    color: #3529df;
+    background: #121FCF;
+    background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -87,7 +90,8 @@ input, select {
     margin-bottom: 20px;
 }
 
-button {
+
+#submit {
     width: 100%;
     padding: 12px;
     background: #7494ec;
@@ -99,6 +103,21 @@ button {
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
 }
 
 #delete {
@@ -113,11 +132,20 @@ button {
     background: #ec4051;
     color: #000000;
     margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#delete img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 #copy {
     padding: 12px;
-    width: 32%;
+    width: 33%;
     border: none;
     border-radius: 10px;
     font: roboto;
@@ -127,11 +155,20 @@ button {
     background: #7494ec;
     color: #ffffff;
     margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#copy img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 #download {
     padding: 12px;
-    width: 30%;
+    width: 33%;
     border: none;
     border-radius: 10px;
     font: roboto;
@@ -141,6 +178,15 @@ button {
     background: #28a745;
     color: #ffffff;
     margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#download img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 #delete:hover {
