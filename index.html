@@ -22,6 +22,7 @@
             
             <select id="fields" name="fields">
                 <option>--Select a Field--</option>
+                <option value="None">None</option>
                 <option value="Web Development">Web Development</option>
                 <option value="Cybersecurity">Cybersecurity</option>
                 <option value="Artificial Intelligence & Machine Learning">Artificial Intelligence & Machine Learning</option>
@@ -38,24 +39,38 @@
                 <option value="Aerospace & Aviation">Aerospace & Aviation</option>
                 <option value="Biomedical Engineering">Biomedical Engineering</option>
                 <option value="Psychology & Behavioral Science">Psychology & Behavioral Science</option>
-                <option value="None">None</option>
             </select>
+           
+            <button id="submit" onclick="generateTitle(), showForm('title-box')" name="submit" >
+                <img src="generate.png" alt="Generate Icon">
+                Generate
+            </button>
 
-            <button type="submit" onclick="generateTitle(), showForm('title-box')" name="submit">Generate</button>
-            <button id="delete" onclick="deleteTitles();"> Delete</button>
-            <button id="copy" onclick="copyToClipboard();">Copy</button>
-            <button id="download" onclick="downloadTitles();">Download</button>
+            <div class="button-group">
+                <button id="delete" onclick="deleteTitles();">
+                    <img src="delete.png" alt="Delete Icon"> 
+                    Delete
+                </button>
+            <button id="copy" onclick="copyToClipboard();">
+                <img src="copy.png" alt="Copy Icon"> 
+                Copy
+            </button>
+            <button id="download" onclick="downloadTitles();">
+                <img src="downloads.png" alt="Download Icon">
+                Download
+            </button>   
+        </div>
 
             <footer>
                 <p>&copy; 2025 Capstone Title Generator</p>
-                <p>Developed by: Chano</p>
+                <p>Developed by: Carl Christian Ortego</p>
                 <p>Powered by: <a href="https://gemini.google.com/app">Gemini</a></p>
             </footer>
         </div>
 
         <div class="form-box" id="title-box>
             <div class="title-box">
-                <h3 class="left-align">Your capstone/proposal title are: </h3>
+                <h3 class="left-align">Your Capstone Title/Proposal are: </h3>
                 <div class="loader" id="loader" style="display: none;"></div>
                 <ol id="title-list"></ol>
                 <span id="generated-titles"></span>
